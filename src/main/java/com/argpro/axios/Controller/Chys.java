@@ -54,7 +54,7 @@ public class Chys {
         if (shys.existsByNomSkill(dtoHys.getNomSkill())) {
             return new ResponseEntity(new Mensaje("Habilidad existente"), HttpStatus.BAD_REQUEST);
         }
-        hys skills = new hys(dtoHys.getNomSkill(), dtoHys.getPorcSkill());
+        hys skills = new hys(dtoHys.getNomSkill(), dtoHys.getPorcSkill(),dtoHys.getColorSkill(),dtoHys.getImgSkill());
         shys.save(skills);
         return new ResponseEntity(new Mensaje("Habilidad guardada"), HttpStatus.OK);
     }
@@ -73,6 +73,8 @@ public class Chys {
         hys skills = shys.getOne(id).get();
         skills.setNomSkill(dtoHys.getNomSkill());
         skills.setPorcSkill((dtoHys.getPorcSkill()));
+        skills.setColorSkill((dtoHys.getColorSkill()));
+        skills.setImgSkill((dtoHys.getImgSkill()));
 
         shys.save(skills);
         return new ResponseEntity(new Mensaje("Habilidad actualizada"), HttpStatus.OK);

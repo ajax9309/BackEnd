@@ -32,15 +32,20 @@ public class Persona {
     @NotNull
     @Size(min= 1, max = 255, message="no cumple minimo")
     private String descrip;
+    
+    @NotNull
+    @Size(min= 1, max = 255, message="no cumple minimo")
+    private String nivel;
 
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido, String img, String descrip) {
+    public Persona(String nombre, String apellido, String img, String descrip ,String nivel) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.img = img;
         this.descrip = descrip;
+        this.nivel= nivel;
     }
 
     public String getDescrip() {
@@ -49,6 +54,14 @@ public class Persona {
 
     public void setDescrip(String descrip) {
         this.descrip = descrip;
+    }
+
+    public String getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
     }
 
     

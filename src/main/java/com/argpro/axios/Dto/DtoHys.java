@@ -12,14 +12,19 @@ public class DtoHys {
     private String nomSkill;
     @NotBlank
     private int porcSkill;
-
+    @NotBlank
+    private String colorSkill;
+    @NotBlank
+    private String imgSkill;
     
     public DtoHys() {
     }
 
-    public DtoHys(String nomSkill, int porcSkill) {
+    public DtoHys(String nomSkill, int porcSkill, String colorSkill, String imgSkill) {
         this.nomSkill = nomSkill;
         this.porcSkill = porcSkill;
+        this.colorSkill = colorSkill;
+        this.imgSkill = imgSkill;
     }
 
     public String getNomSkill() {
@@ -37,6 +42,24 @@ public class DtoHys {
     public void setPorcSkill(int porcSkill) {
         this.porcSkill = porcSkill;
     }
+
+    public String getColorSkill() {
+        return colorSkill;
+    }
+
+    public void setColorSkill(String colorSkill) {
+        this.colorSkill = colorSkill;
+    }
+
+    public String getImgSkill() {
+        return imgSkill;
+    }
+
+    public void setImgSkill(String imgSkill) {
+        this.imgSkill = imgSkill;
+    }
+
+    
     
     
 }

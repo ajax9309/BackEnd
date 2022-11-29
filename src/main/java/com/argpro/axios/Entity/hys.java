@@ -18,13 +18,17 @@ public class hys {
     private int id;
     private String nomSkill;
     private int porcSkill;
+    private String colorSkill;
+    private String imgSkill;
 
     public hys() {
     }
 
-    public hys(String nomSkill, int porcSkill) {
+    public hys(String nomSkill, int porcSkill, String colorSkill, String imgSkill) {
         this.nomSkill = nomSkill;
         this.porcSkill = porcSkill;
+        this.colorSkill = colorSkill;
+        this.imgSkill = imgSkill;
     }
 
     public int getId() {
@@ -50,6 +54,23 @@ public class hys {
     public void setPorcSkill(int porcSkill) {
         this.porcSkill = porcSkill;
     }
+
+    public String getColorSkill() {
+        return colorSkill;
+    }
+
+    public void setColorSkill(String colorSkill) {
+        this.colorSkill = colorSkill;
+    }
+
+    public String getImgSkill() {
+        return imgSkill;
+    }
+
+    public void setImgSkill(String imgSkill) {
+        this.imgSkill = imgSkill;
+    }
+
     
 
 }

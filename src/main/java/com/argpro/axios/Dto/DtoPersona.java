@@ -5,8 +5,6 @@
 package com.argpro.axios.Dto;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 public class DtoPersona {
     @NotBlank
@@ -17,15 +15,18 @@ public class DtoPersona {
     private String img;
     @NotBlank
     private String descrip;
+    @NotBlank
+    private String nivel;
 
     public DtoPersona() {
     }
 
-    public DtoPersona(String nombre, String apellido, String img, String descrip) {
+    public DtoPersona(String nombre, String apellido, String img, String descrip, String nivel) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.img = img;
         this.descrip = descrip;
+        this.nivel= nivel;
     }
 
     public String getNombre() {
@@ -58,6 +59,14 @@ public class DtoPersona {
 
     public void setDescrip(String descrip) {
         this.descrip = descrip;
+    }
+
+    public String getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
     }
     
     

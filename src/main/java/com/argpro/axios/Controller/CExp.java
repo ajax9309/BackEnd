@@ -58,14 +58,15 @@ public class CExp {
 
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody DtoExp dtoExp) {
-        if (!sExp.existsById(id))
+        if (!sExp.existsById(id)){
             return new ResponseEntity(new Mensaje("ID inexistente"), HttpStatus.BAD_REQUEST);
-        
-        if (sExp.existsByNombreE(dtoExp.getNombreE()) && sExp.getByNombreE(dtoExp.getNombreE()).get().getId() != id)
+        }
+        if (sExp.existsByNombreE(dtoExp.getNombreE()) && sExp.getByNombreE(dtoExp.getNombreE()).get().getId() != id){
             return new ResponseEntity(new Mensaje("Experiencia existente"), HttpStatus.BAD_REQUEST);
-        if (StringUtils.isBlank(dtoExp.getNombreE()))
+        }
+        if (StringUtils.isBlank(dtoExp.getNombreE())){
             return new ResponseEntity(new Mensaje("Nombre obligatorio"), HttpStatus.BAD_REQUEST);
-        
+        }
 
         ExpLaboral xp = sExp.getOne(id).get();
         xp.setNombreE(dtoExp.getNombreE());

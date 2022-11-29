@@ -94,6 +94,7 @@ public class PersonaController {
         persona.setApellido(dtoPersona.getApellido());
         persona.setDescrip(dtoPersona.getDescrip());
         persona.setImg(dtoPersona.getImg());
+        persona.setNivel(dtoPersona.getNivel());
 
         personaService.save(persona);
         return new ResponseEntity(new Mensaje("Registro guardado"), HttpStatus.OK);
